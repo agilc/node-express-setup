@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Connection to mongoDB
-mongoose.connect("mongodb://localhost:27017/node-app", { useNewUrlParser: true })
+mongoose.connect("mongodb://admin:admin123@ds337718.mlab.com:37718/node-basic-setup", { useNewUrlParser: true })
     .then(()=> console.log("Connected to MongoDB"))
     .catch(error => console.error("Could not connect to mongoDB",error));
 
