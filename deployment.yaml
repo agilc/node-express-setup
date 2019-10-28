@@ -34,7 +34,3 @@ spec:
     targetPort: 80
   selector:
     app: node-mongo-app
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.0.2.127
