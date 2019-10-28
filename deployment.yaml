@@ -1,40 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: node-mongo-deployment
+  labels: 
+    app: node-mongo-app
 spec:
   selector:
     matchLabels:
-      app: my-app
-  replicas: 1
+      app: node-mongo-app
+  replicas: 3
   template:
     metadata:
       labels:
-        app: my-app
-        env: development
+        app: node-mongo-app
     spec:
       containers:
       - name: my-app
-        image: gcr.io/skill-poc/app:v1
+        image: nodejs-mongo-basic-image
         ports:
         - containerPort: 4000
-        env:
-        - name: PORT
-          value: "4000"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: NODE_ENV
-          value: "development"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: node-mongo-service
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 4000
-    protocol: TCP
   selector:
-    app: my-app
+    app: node-mongo-app
