@@ -28,11 +28,13 @@ metadata:
     app: node-mongo-app
 spec:
   type: LoadBalancer
-  externalIPs:
-  - 192.168.0.10
   ports:
   - nodePort: 31000
     port: 80
     targetPort: 80
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.0.2.127
   selector:
     app: node-mongo-app
