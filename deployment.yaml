@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: nodejs-mongo-basic:v1
+        image: nodejs-mongo-basic-image
         ports:
         - containerPort: 4000
 ---
