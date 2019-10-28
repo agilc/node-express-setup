@@ -17,7 +17,7 @@ spec:
       - name: my-app
         image: gcr.io/skill-poc/app:v1
         ports:
-        - containerPort: 4000
+        - containerPort: 8080
         env:
         - name: PORT
           value: "4000"
