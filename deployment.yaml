@@ -28,6 +28,8 @@ metadata:
     app: node-mongo-app
 spec:
   type: LoadBalancer
+  externalIPs:
+  - 192.168.0.10
   ports:
   - nodePort: 31000
     port: 80
