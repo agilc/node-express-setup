@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use('/user', usersRouter);
 
 app.get('/', (req, res) => {
-    res.send("ads");
+    res.send("Node Express sample app");
 });
 
 app.listen(process.env.PORT || 8000, () => {
